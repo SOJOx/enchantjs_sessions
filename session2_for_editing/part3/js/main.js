@@ -24,6 +24,12 @@ window.onload = function() {
 		// 毎フレームごとに実行される
 		bear.addEventListener('enterframe', function() {
 
+			/****************************/
+
+				// ここにコードを挿入してください
+			
+			/****************************/	
+
 		});
 
   }

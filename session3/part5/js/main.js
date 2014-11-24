@@ -1,6 +1,12 @@
 // ecnhant.jsを初期化
 enchant();
 
+/****************************/
+
+SCORE = 0;
+
+/****************************/
+
 // Spriteクラスを継承
 Bear = Class.create(Sprite, {
 	
@@ -50,8 +56,15 @@ Apple = Class.create(Sprite, {
 
 		// within() は()内の引数との当たり判定
 		if (this.within(bear)) {
-			
-			// ゲームを停止
+
+			/****************************/
+				
+				// リンゴを消すと同時にスコアを足す
+				SCORE++;
+
+			/****************************/
+
+			// リンゴを画面から消す
 			game.rootScene.removeChild(this);
 		}
 	}
@@ -70,37 +83,52 @@ window.onload = function() {
 
   // ゲームが動作開始した時のコード
 	game.onload = function() {
-  
+
+		/****************************/
+
+			// スコアの追加
+			// ラベルについてはsession1のpart2を参照
+			score_label = new Label();
+			score_label.x = 0;
+			score_label.y = 0;
+			game.rootScene.addChild(score_label);
+
+		/****************************/
+
 		// クマを生成
 		bear = new Bear(150, 280);
 
-		/****************************/
 
-			// create_frame_interval がリンゴが生成される間隔
-			// apple_create_frame はリンゴが生成されるまでのフレーム数
-			apple_create_frame = 0;
-			create_frame_interval = 120;
+		// create_frame_interval がリンゴが生成される間隔
+		// apple_create_frame はリンゴが生成されるまでのフレーム数
+		apple_create_frame = 0;
+		create_frame_interval = 120;
 
 
-			// game画面のフレームに応じてイベントを発生
-			game.rootScene.addEventListener('enterframe', function() {
+		// game画面のフレームに応じてイベントを発生
+		game.rootScene.addEventListener('enterframe', function() {
+
+			/****************************/
+
+				// スコアの表示
+				score_label.text = "SCORE: " + SCORE;
+
+			/****************************/
 			
-				// リンゴを生成するフレームになったか？
-				if (game.frame > apple_create_frame) {
+			// リンゴを生成するフレームになったか？
+			if (game.frame > apple_create_frame) {
 
-					// 新しいリンゴを生成
-					apple = new Apple();
+				// 新しいリンゴを生成
+				apple = new Apple();
 	
-					// 次のリンゴを生成する時間を入れる
-					apple_create_frame = game.frame + create_frame_interval;
+				// 次のリンゴを生成する時間を入れる
+				apple_create_frame = game.frame + create_frame_interval;
 
-					// リンゴを生成する感覚を短くする
-					if (create_frame_interval >= 30)
-							create_frame_interval -= 5;
-				} 
-			});
-
-		/****************************/
+				// リンゴを生成する感覚を短くする
+				if (create_frame_interval >= 30)
+						create_frame_interval -= 5;
+			} 
+		});
 
 	}
 

@@ -24,10 +24,15 @@ window.onload = function() {
 		// 毎フレームごとに実行される
 		bear.addEventListener('enterframe', function() {
 
-			if (game.input.up)		bear.y--;
-			if (game.input.down)	bear.y++;
-			if (game.input.left)	bear.x--;
-			if (game.input.right)	bear.x++;
+			/****************************/
+
+				if (game.input.up)		bear.y--;
+				if (game.input.down)	bear.y++;
+				if (game.input.left)	bear.x--;
+				if (game.input.right)	bear.x++;
+			
+			/****************************/						
+
 		});
 
   }

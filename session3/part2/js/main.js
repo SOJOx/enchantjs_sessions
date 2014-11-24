@@ -29,27 +29,31 @@ Bear = Class.create(Sprite, {
 	}
 });
 
-Apple = Class.create(Sprite, {
+/****************************/
+
+	Apple = Class.create(Sprite, {
 
 		initialize: function() {
 
-		Sprite.call(this, 16, 16);
-		this.image = game.assets['./image/icon0.png'];
+			Sprite.call(this, 16, 16);
+			this.image = game.assets['./image/icon0.png'];
 		
-		// 横の位置をランダムに
-		// Math.random() は0以上1未満の 乱数を生成する
-		this.x = Math.random() * (320-16);
-		this.y = 0;
-		this.frame = 15; // リンゴの画像は15番目
-		game.rootScene.addChild(this);
-	},
+			// 横の位置をランダムに
+			// Math.random() は0以上1未満の 乱数を生成する
+			this.x = Math.random() * (320-16);
+			this.y = 0;
+			this.frame = 15; // リンゴの画像は15番目
+			game.rootScene.addChild(this);
+		},
 
-	onenterframe: function() {
+		onenterframe: function() {
 
-		// リンゴの自由落下
-		this.y++;
-	}
-});
+			// リンゴの自由落下
+			this.y++;
+		}
+	});
+
+/****************************/
 
 window.onload = function() {
 
@@ -59,14 +63,23 @@ window.onload = function() {
 	// ゲームのfpsを30で固定
 	game.fps = 30;
 
-	// 画像を先にロード
-	game.preload('./image/bear.png', './image/icon0.png');
+	/****************************/
+
+		// 画像を先にロード
+		game.preload('./image/bear.png', './image/icon0.png');
+
+	/****************************/
 
   // ゲームが動作開始した時のコード
 	game.onload = function() {
   
 		bear = new Bear(150, 280);
-		apple = new Apple();
+
+		/****************************/
+
+			apple = new Apple();
+	
+		/****************************/
 	}
 
   // ゲーム開始

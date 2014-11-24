@@ -20,11 +20,16 @@ window.onload = function() {
 		bear.frame = 0;
 		game.rootScene.addChild(bear);
 
-		// touchイベントの追加
-		// touchイベントには touchend の他に touchstart もある
-		bear.addEventListener('touchend', function() {
-			bear.frame++;
-		});
+		/****************************/
+			
+			// touchイベントの追加
+			// touchイベントには touchend の他に touchstart もある
+			bear.addEventListener('touchend', function() {
+				bear.frame++;
+			});
+
+		/****************************/
+
   }
 
   // ゲーム開始

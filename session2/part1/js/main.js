@@ -23,11 +23,17 @@ window.onload = function() {
 		// frameイベントの追加
 		// 毎フレームごとに実行される
 		bear.addEventListener('enterframe', function() {
-			// ageは画面に表示されてから経過したフレーム数
-			if (game.frame % 5 > 0) return;
+
+			/****************************/
+
+				// ageは画面に表示されてから経過したフレーム数
+				if (game.frame % 5 > 0) return;
 			
-			if (bear.frame == 0)	bear.frame = 1;
-			else	bear.frame = 0;		
+				if (bear.frame == 0)	bear.frame = 1;
+				else	bear.frame = 0;		
+			
+			/****************************/
+
 		});
   }
 

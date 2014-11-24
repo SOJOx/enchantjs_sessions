@@ -28,6 +28,12 @@ window.onload = function() {
 			
 			if (bear.frame == 0)	bear.frame = 1;
 			else	bear.frame = 0;
+
+			/****************************/
+
+				// ここにコードを挿入してください
+			
+			/****************************/
 			
 		});
   }

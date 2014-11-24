@@ -48,12 +48,15 @@ Apple = Class.create(Sprite, {
 		// リンゴの自由落下
 		this.y++;
 
-		// within() は()内の引数との当たり判定
-		if (this.within(bear)) {
-			
-			// ゲームを停止
-			game.stop();
-		}
+		/****************************/
+
+			// within() は()内の引数との当たり判定
+			if (this.within(bear)) {
+				
+				// ゲームを停止
+				game.rootScene.removeChild(this);
+			}
+		/****************************/
 	}
 });
 

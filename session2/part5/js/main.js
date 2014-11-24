@@ -17,23 +17,29 @@ Bear = Class.create(Sprite, {
 		this.frame = 0;
 		game.rootScene.addChild(this);
 	},
+
+	/****************************/
+
+		// addEventListener('enterframe', function(){})
+		// と同じ機能を持つもの
+		onenterframe: function() {
 	
-	// addEventListener('enterframe', function(){})
-	// と同じ機能を持つもの
-	onenterframe: function() {
-		// キー入力の処理
-		if (game.input.up)		this.y--;
-		if (game.input.down)	this.y++;
-		if (game.input.left)	this.x--;
-		if (game.input.right)	this.x++;
+			// キー入力の処理
+			if (game.input.up)		this.y--;
+			if (game.input.down)	this.y++;
+			if (game.input.left)	this.x--;
+			if (game.input.right)	this.x++;
 
 
-		// クマの画像を変える処理
-		if (game.frame%5 != 0)	return;
+			// クマの画像を変える処理
+			if (game.frame%5 != 0)	return;
 
-		if (this.frame == 0)	this.frame = 1;
-		else	this.frame = 0;
-	}
+			if (this.frame == 0)	this.frame = 1;
+			else	this.frame = 0;
+		}
+			
+	/****************************/	
+	
 });
 
 window.onload = function() {

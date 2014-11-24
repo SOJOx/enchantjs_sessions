@@ -20,6 +20,12 @@ window.onload = function() {
 		bear.frame = 0;
 		game.rootScene.addChild(bear);
 
+		/****************************/
+			
+			// ここにコードを挿入してください
+
+		/****************************/
+
   }
 
   // ゲーム開始

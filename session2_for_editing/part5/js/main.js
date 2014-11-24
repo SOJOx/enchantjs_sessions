@@ -16,7 +16,14 @@ Bear = Class.create(Sprite, {
 		this.y = y;
 		this.frame = 0;
 		game.rootScene.addChild(this);
-	}
+	},
+
+	/****************************/
+
+		// ここにコードを挿入してください
+			
+	/****************************/	
+					
 });
 
 window.onload = function() {

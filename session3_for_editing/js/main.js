@@ -11,7 +11,7 @@ window.onload = function() {
 
   // ゲームが動作開始した時のコード
 	game.onload = function() {
-  
+
 	}
 
   // ゲーム開始

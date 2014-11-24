@@ -22,7 +22,14 @@ window.onload = function() {
 
 		// frameイベントの追加
 		// 毎フレームごとに実行される
-		bear.addEventListener('', function() {
+		bear.addEventListener(/* ここにコードを挿入してください*/, function() {
+			
+			/****************************/
+
+				// ここにコードを挿入してください
+			
+			/****************************/
+
 		});
   }
 
